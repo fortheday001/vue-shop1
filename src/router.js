@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Index from './views/Index.vue'
 
 Vue.use(Router)
 
@@ -10,16 +10,51 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      component: Index,
+      children:[
+        // 首页
+        {
+          path: '',
+          name: 'index',
+          component: () => import('./views/index/Index.vue')
+        },
+        // 分类
+        {
+          path: 'category',
+          name: 'category',
+          component: () => import('./views/index/Category.vue')
+        },
+        // 购物车
+        {
+          path: 'cart',
+          name: 'cart',
+          component: () => import('./views/index/Cart.vue')
+        },
+        // 个人中心
+        {
+          path: 'profile',
+          name: 'profile',
+          component: () => import('./views/index/Profile.vue')
+        }
+      ]
     },
+    // 注册
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/regist',
+      name: 'regist',
+      component: () => import('./views/Regist.vue')
+    },
+    // 登录
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/Login.vue')
+    },
+    // 搜索
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('./views/Search.vue')
     }
   ]
 })
