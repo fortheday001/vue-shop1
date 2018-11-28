@@ -34,7 +34,11 @@ export default new Router({
         {
           path: 'profile',
           name: 'profile',
-          component: () => import('./views/index/Profile.vue')
+          component: () => import('./views/index/Profile.vue'),
+          // 放辅助用的自定义的数据
+          meta: {
+            needLogin: true
+          }
         }
       ]
     },

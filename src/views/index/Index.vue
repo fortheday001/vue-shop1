@@ -1,30 +1,16 @@
 <template>
   <div>
     <header class="page-header">
-      <h4>CAST商城</h4>
+      CAST商城
     </header>
-
     <div class="contaniner fixed-contb">
       <figure class="ban swiper-container">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="../../assets/images/index-ban01.png"/>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="../../assets/images/index-ban02.png"/>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="#">
-              <img src="../../assets/images/index-ban03.png"/>
-            </a>
-          </li>
-        </ul>
+        <wv-swipe :height="200" :autoplay="5000">
+          <wv-swipe-item><img src="../../assets/images/index-ban01.png"/></wv-swipe-item>
+          <wv-swipe-item><img src="../../assets/images/index-ban02.png"/></wv-swipe-item>
+          <wv-swipe-item><img src="../../assets/images/index-ban03.png"/></wv-swipe-item>
+        </wv-swipe>
       </figure>
-
       <section class="shop">
         <h3>
           <a href="#">
