@@ -59,6 +59,12 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: () => import('./views/Search.vue')
+    },
+    // 商品详情页
+    {
+      path: '/goods',
+      name: 'goods',
+      component: () => import('./views/Goods.vue')
     }
   ]
 })

@@ -12,10 +12,12 @@ import '@/assets/style.css';
 
 import 'we-vue/lib/style.css'
 
-import { Swipe, SwipeItem } from 'we-vue'
+import { Swipe, SwipeItem, Loadmore, InfiniteScroll, NumberSpinner } from 'we-vue'
 
+Vue.use(NumberSpinner)
+Vue.use(Loadmore)
+Vue.use(InfiniteScroll)
 Vue.use(Swipe).use(SwipeItem)
-
 Vue.use(VueAxios, axios)
 
 // 注册导航守卫（每次加载一个页面时就会自动被执行）
