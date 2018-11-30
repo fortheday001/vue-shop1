@@ -30,7 +30,7 @@
     <div class="page-footer">
       <div class="shop-go">
         <b>合计：￥3223</b>
-        <span><a href="buy.html">去结算（32）</a></span>
+        <span><router-link to="/buy">去结算（32）</router-link></span>
       </div>
     </div>
   </div>

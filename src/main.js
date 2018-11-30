@@ -36,6 +36,20 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
+// 为 axios 添加一个拦截器
+Vue.axios.interceptors.request.use(function (config) {
+  // 在发送请求之前自动执行
+  let token = localStorage.getItem('ACCESS_TOKEN')
+  if(token)
+  {
+    config.headers['Authorization'] = "Bearer "+token
+  }
+  return config;
+}, function (error) {
+  // Do something with request error
+  return Promise.reject(error);
+});
+
 // 先统一设置接口的基础地址
 Vue.axios.defaults.baseURL = 'http://127.0.0.1:8001/api'
 
